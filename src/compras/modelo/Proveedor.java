@@ -50,16 +50,18 @@ public class Proveedor {
 		this.estado = estado;
 	}
 	//Metodos u Operaciones
-	public int registrar_proveedor(){
+	public int registrar_proveedor(Proveedor p){
+		System.out.println(p);
+		System.out.println("Llego a la clase provedor-modelo");
 		int res=0;
 		return res;
 		
 	}
-	public int actualizar_proveedor(){
+	public int actualizar_proveedor(Proveedor p){
 		int res=0;
 		return res;
 	}
-	public int eliminar_proveedor(){
+	public int eliminar_proveedor(Proveedor p){
 		int res=0;
 		return res;
 	}

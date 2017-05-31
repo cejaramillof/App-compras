@@ -8,33 +8,33 @@
 </head>
 <body>
 	<div align="center">
-		<form action="" method="post">
+		<form action="cProveedor" method="post">
 			<table>
 				<tr><th colspan="2">Registrar proveedor</th></tr>
 				<tr>
 					<td align="right">Razon Social</td>
-					<td><input type="text" name="rs" /></td>
+					<td><input type="text" name="f_rs" /></td>
 				</tr>
 				<tr>
 					<td align="right">RUC</td>
-					<td><input type="text" name="ruc" /></td>
+					<td><input type="text" name="f_ruc" /></td>
 				</tr>
 				<tr>
 					<td align="right">Teléfono</td>
-					<td><input type="text" name="fono" /></td>
+					<td><input type="text" name="f_fono" /></td>
 				</tr>
 				<tr>
 					<td align="right">Dirección</td>
-					<td><input type="text" name="direccion" /></td>
+					<td><input type="text" name="f_direccion" /></td>
 				</tr>
 				<tr>
 					<td align="right">Estado</td>
-					<td><input type="radio" name="estado" value="1">Activo<input type="radio" name="estado" value="0">Inactivo</td>
+					<td><input type="radio" name="f_estado" value="1">Activo<input type="radio" name="f_estado" value="0">Inactivo</td>
 				</tr>
 				<tr>
 					<td align="right">Estado Select</td>
 					<td>
-						<select name="estado2">
+						<select name="f_estado2">
 							<option value="">---Seleccione---</option>							
 							<option value="1">Activo</option>
 							<option value="0">Inactivo</option>
