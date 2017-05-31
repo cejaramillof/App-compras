@@ -4,48 +4,52 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Mantenimiento proveedor</title>
+<title>Mantenimiento departamento</title>
 </head>
 <body>
 	<div align="center">
-		<form action="" method="post">
+		<form action="" method="post" >
 			<table>
-				<tr><th colspan="2"> Registrar proveedor</th></tr>
 				<tr>
-					<td align="right">Razon Social</td>
-					<td><input type="text" name="rs" /></td>
+					<th colspan="2">Registrar Departamento</th>
 				</tr>
 				<tr>
-					<td align="right">RUC</td>
-					<td><input type="text" name="ruc" /></td>
-				</tr>
-				<tr>
-					<td align="right">Teléfono</td>
-					<td><input type="text" name="fono" /></td>
-				</tr>
-				<tr>
-					<td align="right">Dirección</td>
-					<td><input type="text" name="direccion" /></td>
-				</tr>
-				<tr>
-					<td align="right">Estado</td>
-					<td><input type="radio" name="estado" value="1">Activo<input type="radio" name="estado" value="0">Inactivo</td>
-				</tr>
-				<tr>
-					<td align="right">Estado Select</td>
+					<td>Áreas</td>
 					<td>
-						<select name="estado2">
-							<option value="">---Seleccione---</option>							
-							<option value="1">Activo</option>
-							<option value="0">Inactivo</option>
-						</select>
+						<select name="f_area" >
+							<option value="" >--Seleccione--</option>
+							<option value="01">ITSAE</option>
+							<option value="02">CADE</option>
+							<option value="03">ALIMENTOS CADE</option>
+						</select>					
 					</td>
 				</tr>
 				<tr>
-					<td align="center" colspan="2"><input type="submit" name="guardar" value="Registrar"/></td>
-				</tr>			
+					<td>Código A</td>
+					<td><input type="text" name="f_codigoa" /></td>
+				</tr>
+				<tr>
+					<td>Código B</td>
+					<td><input type="text" name="f_codigob" /></td>
+				</tr>
+				<tr>
+					<td>Nombre</td>
+					<td><input type="text" name="f_nombre" /></td>
+				</tr>
+				<tr>
+					<td>Estado</td>
+					<td>
+						<input type="radio" name="f_estado" value="1" >Activar<br>
+						<input type="radio" name="f_estado" value="0" >Desactivar
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center">								
+						<input type="submit" value="Registrar" />
+					</td>
+				</tr>
 			</table>
 		</form>
-	</div>		
+	</div>	
 </body>
 </html>
