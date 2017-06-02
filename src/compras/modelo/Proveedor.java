@@ -1,5 +1,7 @@
 package compras.modelo;
 
+import java.sql.ResultSet;
+
 public class Proveedor {
 //Atributos de la clase
 	private int idproveedor; //Llave primaria
@@ -51,34 +53,39 @@ public class Proveedor {
 	public void setEstado(String estado) {
 		this.estado = estado;
 	}
-	//Metodos u Operaciones
+	// METODOS U OPERACIONES	----------------------
 	public int registrar_proveedor(Proveedor p){
-		cx.con(); // abrimos la conexion
-		String com = "INSERT INTO PROVEEDOR (idproveedor,razonsocial,ruc,direccion,telefono,estado) "+ 	
-				"VALUES (null,'"+p.getRazonsocial()+"','"+
-				p.getRuc()+"','"+
-				p.getDireccion()+"','"+
-				p.getTelefono()+"','"+
-				p.getEstado()+"')"; //hacemos la consulta SQL
+		cx.con(); //ABRIMOS LAS CONEXION
+		String com = "INSERT INTO PROVEEDOR (idproveedor,razonsocial,ruc,direccion,telefono,estado) "+
+						"VALUES (null,'"+p.getRazonsocial()+"','"+
+										p.getRuc()+"','"+
+										p.getDireccion()+"','"+
+										p.getTelefono()+"','"+
+										p.getEstado()+"')"; //hacemos la consulta SQL
 		
-		
-		int res = cx.execQuery(com); // ejecutamos la consulta
+		int res = cx.execQuery(com); //ejecutamos la consulta
 		cx.desconectar(); //cerramos la conexion
 		//System.out.println(p);
-		System.out.println("Llego a la clase provedor-modelo "+com);
+		System.out.println("Llego a la clase Proveedor-MODELO "+com);
 		//int res=0;
-		return res;
-		
+		return res;				
 	}
 	public int actualizar_proveedor(Proveedor p){
 		int res=0;
-		return res;
+		return res;	
 	}
-	public int eliminar_proveedor(Proveedor p){
+	public int eliminiar_proveedor(Proveedor p){
 		int res=0;
-		return res;
+		return res;	
 	}
-	public void listar_proveedor(){
-		
-	}	
+	public ResultSet listar_proveedor(){
+		String com = "SELECT * FROM PROVEEDOR";
+		ResultSet rs = cx.getDatos(com);
+		return rs;
+	}
+	public ResultSet paginacionProveedor(int pg, int numreg){
+		String com = "SELECT * FROM PROVEEDOR LIMIT "+(pg-1)*numreg+","+numreg;
+		ResultSet rs = cx.getDatos(com);
+		return rs;
+	}
 }

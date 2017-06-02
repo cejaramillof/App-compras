@@ -8,7 +8,7 @@
 </head>
 <body>
 	<div align="center">
-		<form action="" method="post" name="p">
+		<form action="cProducto" method="post" name="p">
 			<table>
 				<tr><th colspan="2" >Mantenimiento de Productos</th></tr>
 				<tr>

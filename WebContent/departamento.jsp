@@ -8,7 +8,7 @@
 </head>
 <body>
 	<div align="center">
-		<form action="" method="post" >
+		<form action="cDepartamento" method="post" >
 			<table>
 				<tr>
 					<th colspan="2">Registrar Departamento</th>
@@ -50,6 +50,7 @@
 				</tr>
 			</table>
 		</form>
+		<jsp:include page="listadepartamento.jsp" flush="true" />
 	</div>	
 </body>
 </html>

@@ -46,6 +46,7 @@
 				</tr>			
 			</table>
 		</form>
+		<jsp:include page="listadeproveedor.jsp" flush="true" />
 	</div>		
 </body>
 </html>

@@ -63,7 +63,7 @@ public class cProveedor extends HttpServlet {
 		p.setEstado(request.getParameter("f_estado"));
 		p.registrar_proveedor(p);
 		response.sendRedirect("proveedor.jsp");
-		System.out.println(p.getRuc());
+		System.out.println(p.getRuc()+"-Paso por el control cProveedor");
 		//doGet(request, response);
 	}
 

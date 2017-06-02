@@ -14,6 +14,7 @@ public class Conectar {
 	private String DB;
 	private String userDB;
 	private String passwDB;
+	public int MAXROW = 5;
 	
 	public Conectar() {
 		this.server = "127.0.0.1"; // Localhost
@@ -54,5 +55,30 @@ public class Conectar {
 		}
 		return res;
 	}
-	//metodo para ejecutar SELECT
+	//metodo para ejectuar SELECT
+	public ResultSet getDatos(String com){
+		try {
+			this.con();
+			this.data = this.consulta.executeQuery(com);			
+		} catch (Exception e) {
+			System.out.println("Error de la consulta "+e.getMessage());
+		}
+		return data;
+	}
+	//Metodo que devuelve el numero de filas o registros
+	public int contarFilas(String com){
+		try {
+			this.con();
+			this.data = this.consulta.executeQuery(com);
+			int contador = 0;
+			while(data.next()){// recorre todo el resulset
+				contador++;// sumar las veces que haya registros
+			}
+			return contador; // devuelve cantidad de registros
+		} catch (Exception e) {
+			System.out.println("Error al contar registros "+e.getMessage());
+			System.out.println(com);
+			return 0;
+		}
+	}
 }
