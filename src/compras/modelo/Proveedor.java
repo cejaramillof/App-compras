@@ -8,6 +8,8 @@ public class Proveedor {
 	private String direccion; //Direccion empresa
 	private String telefono; //Telefono empresa
 	private String estado;
+	Conectar cx = new Conectar();
+	
 	//Metodo constructor
 	public Proveedor() {
 		// TODO Auto-generated constructor stub
@@ -51,9 +53,20 @@ public class Proveedor {
 	}
 	//Metodos u Operaciones
 	public int registrar_proveedor(Proveedor p){
-		System.out.println(p);
-		System.out.println("Llego a la clase provedor-modelo");
-		int res=0;
+		cx.con(); // abrimos la conexion
+		String com = "INSERT INTO PROVEEDOR (idproveedor,razonsocial,ruc,direccion,telefono,estado) "+ 	
+				"VALUES (null,'"+p.getRazonsocial()+"','"+
+				p.getRuc()+"','"+
+				p.getDireccion()+"','"+
+				p.getTelefono()+"','"+
+				p.getEstado()+"')"; //hacemos la consulta SQL
+		
+		
+		int res = cx.execQuery(com); // ejecutamos la consulta
+		cx.desconectar(); //cerramos la conexion
+		//System.out.println(p);
+		System.out.println("Llego a la clase provedor-modelo "+com);
+		//int res=0;
 		return res;
 		
 	}
