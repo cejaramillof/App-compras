@@ -74,8 +74,10 @@ public class Proveedor {
 		int res=0;
 		return res;	
 	}
-	public int eliminiar_proveedor(Proveedor p){
-		int res=0;
+	public int eliminar_proveedor(Proveedor p){
+		cx.con();
+		String com = "DELETE FROM PROVEEDOR WHERE idproveedor='"+p.getIdproveedor()+"'";
+		int res= cx.execQuery(com);
 		return res;	
 	}
 	public ResultSet listar_proveedor(){

@@ -59,7 +59,10 @@
 		<td><%=rs.getString(4) %></td>
 		<td><%=rs.getString(5) %></td>
 		<td><%=rs.getString(6) %></td>
-		<td>[Editar][Eliminar]</td>
+		<td>
+			[Editar]
+			<a href="cProveedor?op=del&id=<%=rs.getString(1)%>&pg=<%=pg%>">[Eliminar]</a>
+		</td>
 	</tr>
 <%
 i++;
