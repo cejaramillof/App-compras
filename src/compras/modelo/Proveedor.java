@@ -71,9 +71,23 @@ public class Proveedor {
 		return res;				
 	}
 	public int actualizar_proveedor(Proveedor p){
-		int res=0;
+		cx.con();
+		String com = "UPDATE PROVEEDOR SET " +
+				"razonsocial='"+p.getRazonsocial()+"', "+
+				"ruc='"+p.getRuc()+"', "+
+				"direccion='"+p.getDireccion()+"', "+
+				"telefono='"+p.getTelefono()+"', "+
+				"estado='"+p.getEstado()+"' "+
+				"WHERE idproveedor='"+getIdproveedor()+"'";
+		int res = cx.execQuery(com); //ejecutamos la consulta
+		cx.desconectar(); //cerramos la conexion		
 		return res;	
 	}
+	public ResultSet buscar_proveedor(Proveedor p){
+		String com = "SELECT * FROM PROVEEDOR WHERE idproveedor='"+p.getIdproveedor()+"'";
+		ResultSet rs = cx.getDatos(com);
+		return rs;
+	}	
 	public int eliminar_proveedor(Proveedor p){
 		cx.con();
 		String com = "DELETE FROM PROVEEDOR WHERE idproveedor='"+p.getIdproveedor()+"'";
