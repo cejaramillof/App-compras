@@ -68,7 +68,7 @@ public class Proveedor {
 		//System.out.println(p);
 		System.out.println("Llego a la clase Proveedor-MODELO "+com);
 		//int res=0;
-		return res;				
+		return res;
 	}
 	public int actualizar_proveedor(Proveedor p){
 		cx.con();
