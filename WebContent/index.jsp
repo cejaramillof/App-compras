@@ -4,9 +4,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Sistema de compras online</title>
+<title>Sistema de Compras/Pedidos</title>
 </head>
 <body>
-
+	<jsp:forward page="login.jsp"></jsp:forward>
 </body>
 </html>

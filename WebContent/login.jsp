@@ -15,12 +15,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>Acceso al Sistema</title>
+<script type="text/javascript" src="js/md5.min.js"></script>
 </head>
-<body>
+<body onload="this.login.f_user.focus()">
 	<div align="center">
 		<label style="color: red;"><b><%= msj %></b></label>
-		<form action="cLogin" method="post">
+		<form action="cLogin" method="post" name="login">
 			<fieldset>
 				<legend> Datos de acceso</legend>
 				<table>
@@ -30,7 +31,10 @@
 					</tr>
 					<tr>
 						<td>Password</td>
-						<td><input type="password" name="f_passw" placeholder="Ingrese su contraseña" size="20" required /></td>
+						<td>
+							<input type="password" name="f_passw" onkeyup="this.form.f_passwe.value=md5(this.form.f_passw.value)" placeholder="Ingrese su contraseña" size="20" required />
+							<input type="hidden" name="f_passwe" />
+						</td>
 					</tr>	
 					<tr>
 						<td colspan="2" align="center">

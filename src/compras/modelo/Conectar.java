@@ -19,8 +19,8 @@ public class Conectar {
 	public Conectar() {
 		this.server = "127.0.0.1"; // Localhost
 		this.DB = "compras"; // nombre db
-		this.userDB = "admin"; // user db
-		this.passwDB = ""; // pw db
+		this.userDB = "root"; // user db
+		this.passwDB = "123456"; // pw db
 	}
 	//metodo para abrir conexion
 	public void con(){
