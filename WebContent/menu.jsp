@@ -26,5 +26,6 @@ Nombre y Apellido: <%= sesionOK.getAttribute("usuario2") %><br/>
 Estado: <%= sesionOK.getAttribute("estado") %><br/>
 IP: <%= sesionOK.getAttribute("ip") %><br/>
 </fieldset>
+<jsp:include page="counter.jsp"></jsp:include>
 </body>
 </html>
